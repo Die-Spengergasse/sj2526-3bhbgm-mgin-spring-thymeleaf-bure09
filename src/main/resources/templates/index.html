@@ -2,12 +2,18 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
-    <title>Greeting</title>
+    <title>Welcome Guys</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
 <body>
 <div class="container">
-    <h1>Hallo</h1>
+    <h1>Hello please insert your pet</h1>
+    <style>
+        .container{
+            color: Black;
+        }
+        baclground-color: white;
+    </style>
     Datum: <span th:text="${today}"></span>
     <div>
         <a href="/pet/list">pet list</a>
