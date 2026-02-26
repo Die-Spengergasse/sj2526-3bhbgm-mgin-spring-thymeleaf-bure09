@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>add new pet</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <Style>
+        .form-control {
+            margin-top: 20px;
+        }
+    </Style>
+</head>
+<body>
+<div class="container">
+    <form th:action="@{/pet/add}" th:object="${pet}" method="post">
+        <input type="text" th:field="*{name}" class="form-control" placeholder="pet name">
+        birth date <input type="date" th:field="*{birth}" class="form-control">
+        type <input type="text" th:field="*{type}" class="form-control" placeholder="pet type">
+        weight <input type="number" th:field="*{weight}" class="form-control" placeholder="pet weight">
+        height <input type="number" th:field="*{height}" class="form-control" placeholder="pet height">
+            owner <input type="text" th:field="*{owner}" class="form-control" placeholder="pet owner">
+        <input type="submit" class="form-control" value="Save">
+    </form>
+</div>
+</body>
+</html>

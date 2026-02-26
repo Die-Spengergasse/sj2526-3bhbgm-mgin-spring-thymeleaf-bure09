@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pets List</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <style>
+        .table, th, td{
+            border: 1px solid black;
+        }
+        .table { margin-top: 20px; }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>name</th>
+            <th>birth</th>
+            <th>type</th>
+            <th>weight</th>
+            <th>height</th>
+            <th>owner</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="p : ${pets}">
+            <td th:text="${p.name}"></td>
+            <td th:text="${p.birth}"></td>
+            <td th:text="${p.type}"></td>
+            <td th:text="${p.weight}"></td>
+            <td th:text="${p.height}"></td>
+            <td th:text="${p.owner}"></td>
+        </tr>
+        </tbody>
+
+    </table>
+
+    <p>
+        <a href="/pet/add">new pet</a>
+    </p>
+</div>
+</body>
+</html>
