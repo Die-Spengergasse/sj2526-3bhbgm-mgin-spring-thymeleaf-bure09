@@ -23,6 +23,9 @@
             <th>weight</th>
             <th>height</th>
             <th>owner</th>
+            <th>     </th>
+            <th>     </th>
+
         </tr>
         </thead>
         <tbody>
@@ -33,6 +36,16 @@
             <td th:text="${p.weight}"></td>
             <td th:text="${p.height}"></td>
             <td th:text="${p.owner}"></td>
+
+            <td>
+                <a th:href="@{/pet/edit/{id}(id=${p.id})}" class="btn btn-warning">Edit</a>
+            </td>
+
+            <td>
+                <a th:href="@{/pet/delete/{id}(id=${p.id})}" class="btn btn-danger"
+                   onclick="return confirm('Delete this pet?');">Delete</a>
+            </td>
+
         </tr>
         </tbody>
 
