@@ -1,27 +1,72 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/html">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Welcome Guys</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <title>Pet App</title>
+
+    <style>
+
+        body{
+            margin:0;
+            font-family:Arial, sans-serif;
+
+            background-image:url("/images/Tiere.png");
+            background-size:auto;
+            background-position:center;
+            background-repeat:repeat;
+
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+
+
+        h1{
+            font-size:40px;
+            margin-bottom:20px;
+        }
+
+        .date{
+            font-size:18px;
+            margin-bottom:30px;
+        }
+
+        .container{
+            text-align:center;
+            background:rgba(255,255,255,0.9);
+            padding:50px;
+            border-radius:15px;
+            box-shadow:0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        .btn{
+            font-size:22px;
+            padding:15px 40px;
+            background-color:#007BFF;
+            color:white;
+            border:none;
+            border-radius:10px;
+            cursor:pointer;
+            transition:0.3s;
+            text-decoration:none;
+        }
+
+        .btn:hover{
+            background-color:#0056b3;
+            transform:scale(1.05);
+        }
+
+    </style>
 </head>
+
 <body>
+
 <div class="container">
     <h1>Hello please insert your pet</h1>
-    <style>
-        .container{
-            color: Black;
-        }
-        baclground-color: white;
-    </style>
-    Datum: <span th:text="${today}"></span>
-    <div>
-        <a href="/pet/list">pet list</a>
-    </div>
+    <div class="date">Datum: 05.03.2026</div>
+    <a href="/pet/list" class="btn">Pet List</a>
 </div>
+
 </body>
 </html>
-
-
-
-

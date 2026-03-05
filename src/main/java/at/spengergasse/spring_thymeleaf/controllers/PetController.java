@@ -39,12 +39,11 @@ public class PetController {
     public String editPet(@PathVariable int id, Model model) {
         Pet pet = petRepository.findById(id).orElseThrow();
         model.addAttribute("pet", pet);
-        return "edit_pet"; // besser eigenes template fürs edit
+        return "edit_pet";
     }
 
     @PostMapping("/edit/{id}")
     public String updatePet(@PathVariable int id, @ModelAttribute("pet") Pet pet) {
-        // WICHTIG: ID setzen, damit JPA updatet statt neu erstellt
         pet.setId(id);
         petRepository.save(pet);
         return "redirect:/pet/list";

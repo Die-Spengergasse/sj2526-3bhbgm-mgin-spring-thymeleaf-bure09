@@ -3,18 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <title>Pets List</title>
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
     <style>
-        .table, th, td{
-            border: 1px solid black;
+
+        body{
+            background-image: url('/images/Tiere.png');
+            background-size: auto;
+            background-position: center;
+            background-repeat:  repeat;
+            height:100vh;
         }
-        .table { margin-top: 20px; }
+
+        .container{
+            margin-top:80px;
+            background: rgba(255,255,255,0.9);
+            padding:30px;
+            border-radius:12px;
+            box-shadow:0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        .table{
+            margin-top:20px;
+            background:white;
+        }
+
+        .table th{
+            background:#2c3e50;
+            color:white;
+            text-align:center;
+        }
+
+        .table td{
+            text-align:center;
+        }
+
+        .btn-warning{
+            background:#f39c12;
+            border:none;
+        }
+
+        .btn-danger{
+            background:#e74c3c;
+            border:none;
+        }
+
+        .btn-primary{
+            background:#3498db;
+            border:none;
+        }
 
     </style>
+
 </head>
+
 <body>
+
 <div class="container">
-    <table class="table">
+
+    <h2>Pets List</h2>
+
+    <table class="table table-striped">
+
         <thead>
         <tr>
             <th>name</th>
@@ -23,13 +74,15 @@
             <th>weight</th>
             <th>height</th>
             <th>owner</th>
-            <th>     </th>
-            <th>     </th>
-
+            <th></th>
+            <th></th>
         </tr>
         </thead>
+
         <tbody>
+
         <tr th:each="p : ${pets}">
+
             <td th:text="${p.name}"></td>
             <td th:text="${p.birth}"></td>
             <td th:text="${p.type}"></td>
@@ -38,22 +91,30 @@
             <td th:text="${p.owner}"></td>
 
             <td>
-                <a th:href="@{/pet/edit/{id}(id=${p.id})}" class="btn btn-warning">Edit</a>
+                <a th:href="@{/pet/edit/{id}(id=${p.id})}" class="btn btn-warning">
+                    Edit
+                </a>
             </td>
 
             <td>
-                <a th:href="@{/pet/delete/{id}(id=${p.id})}" class="btn btn-danger"
-                   onclick="return confirm('Delete this pet?');">Delete</a>
+                <a th:href="@{/pet/delete/{id}(id=${p.id})}"
+                   class="btn btn-danger"
+                   onclick="return confirm('Delete this pet?');">
+                    Delete
+                </a>
             </td>
 
         </tr>
+
         </tbody>
 
     </table>
 
     <p>
-        <a href="/pet/add">new pet</a>
+        <a href="/pet/add" class="btn btn-primary">Add new pet</a>
     </p>
+
 </div>
+
 </body>
 </html>

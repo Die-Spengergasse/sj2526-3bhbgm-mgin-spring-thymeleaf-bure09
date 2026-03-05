@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>at.spengergasse</groupId>
-    <artifactId>spring_thymeleaf</artifactId>
+    <artifactId>Aufgabe_8_springthymeleaf_Sretenovic</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>spring_thymeleaf</name>
     <description>spring_thymeleaf</description>
